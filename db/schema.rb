@@ -43,6 +43,7 @@ ActiveRecord::Schema.define(version: 20160218170537) do
     t.datetime "updated_at"
     t.integer  "plan_id"
     t.string   "stripe_customer_token"
+    t.string   "strip_customer_token"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
