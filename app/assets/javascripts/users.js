@@ -9,7 +9,7 @@ $(document).ready(function() {
         cvcNum = $('#card_code').val(),
         expMonth = $('#card_month').val(),
         expYear = $('#card_year').val();
-        
+
     if (!error) {
       // Get the Stripe token:
       Stripe.createToken({
@@ -25,13 +25,13 @@ $(document).ready(function() {
   function stripeResponseHandler(status, response) {
     // Get a reference to the form:
     var f = $("#new_user");
-    
+
     // Get the token from the response:
     var token = response.id;
-    
+    // var answer = response.error.message;
     // Add the token to the form:
-    f.append('<input type="hidden" name="user[stripe_card_token]" value="' + token + '" />');
-    
+    f.append('<input type="text" name="user[stripe_card_token]" value="' + token + '" />');
+    // f.append('<input type="text" name="user[stripe_status]" value="' + answer + '" />');
     // Submit the form:
     f.get(0).submit(); 
   }
