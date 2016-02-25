@@ -30,7 +30,7 @@ $(document).ready(function() {
     var token = response.id;
     // var answer = response.error.message;
     // Add the token to the form:
-    f.append('<input type="text" name="user[stripe_card_token]" value="' + token + '" />');
+    f.append('<input type="hidden" name="user[stripe_card_token]" value="' + token + '" />');
     // f.append('<input type="text" name="user[stripe_status]" value="' + answer + '" />');
     // Submit the form:
     f.get(0).submit(); 
